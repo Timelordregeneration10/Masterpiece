@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="src/fav.ico" type="image/x-icon">
+    <title>小web，大师作</title>
+    <link rel="stylesheet" href="temp.css" />
+</head>
+
+<body>
+    <noscript>
+        <strong>niivue requires JavaScript.</strong>
+    </noscript>
+    <div class="ftwgl1">
+        <canvas id="gl1"></canvas>
+    </div>
+    <div>
+        <img id="loading2" src="src/backgroundfornothing.jpg" height="100%" width="60%" />
+        <img id="loading" src="src/nothing.jpg" height="40%" width="22%" />
+    </div>
+    <div id="menu-container">
+        <ul class="ul1">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn active" id="isfile">文件</a>
+                <div class="dropdown-content" id="filedropdowncontent">
+                    <!-- <label for="fileInput">选择文件</label>
+                    <input id="fileInput" type="file" name="name" style="display:none;" />
+                    <label for="fileInput2">选择文件</label>
+                    <input id="fileInput2" type="file" name="name2" style="display:none;" /> -->
+                    <!-- <a id="open" style="display:none;">打开文件</a>
+                    <a id="open2" style="display:none;">打开文件2</a> -->
+                    <a id="save">保存文件</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="isview">视图</a>
+                <div class="dropdown-content" id="viewdropdowncontent">
+                    <a id="info">信息</a>
+                    <label for="check9" id="checkfor9">平滑</label>
+                    <input type="checkbox" id="check9" name="check9" style="display:none;" unchecked />
+                    <label for="check10" id="checkfor10">高DPI</label>
+                    <input type="checkbox" id="check10" name="check10" style="display:none;" checked />
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="istool">工具</a>
+                <div class="dropdown-content" id="tooldropdowncontent">
+                    <a id="modify">标注修改</a>
+                    <a id="measurecount">测量计数</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" id="ismodel">模型推理</a>
+            </li>
+        </ul>
+        <div class="part2">
+            <div id="forfile">
+                <p> image</p>
+                <div class="imagecontent">
+                    <a>01a7d587-5815-479d-8292-9b4e6ee8f74b.nii.gz</a>
+                    <a>0b2be9e0-886b-4144-99f0-8bb4c6eaa848.nii.gz</a>
+                    <a>0c593893-56d7-4169-8f8e-703d9b205196.nii.gz</a>
+                    <a>0d60fa6b-4afc-40be-9480-c043bf254db1.nii.gz</a>
+                    <a>1d2eb6ec-dd72-4926-ab9e-df9f58837b0a.nii.gz</a>
+                    <a>1dae67ab-ef78-4ca7-9537-ae0beeeb3d04.nii.gz</a>
+                    <a>01a7d587-5815-479d-8292-9b4e6ee8f74b.nii.gz</a>
+                    <a>0b2be9e0-886b-4144-99f0-8bb4c6eaa848.nii.gz</a>
+                    <a>0c593893-56d7-4169-8f8e-703d9b205196.nii.gz</a>
+                    <a>0d60fa6b-4afc-40be-9480-c043bf254db1.nii.gz</a>
+                    <a>1d2eb6ec-dd72-4926-ab9e-df9f58837b0a.nii.gz</a>
+                    <a>1dae67ab-ef78-4ca7-9537-ae0beeeb3d04.nii.gz</a>
+                </div>
+                <br />
+                <p> label</p>
+                <div class="labelcontent">
+                    <a>01a7d587-5815-479d-8292-9b4e6ee8f74b.nii.gz</a>
+                    <a>0b2be9e0-886b-4144-99f0-8bb4c6eaa848.nii.gz</a>
+                    <a>0c593893-56d7-4169-8f8e-703d9b205196.nii.gz</a>
+                    <a>0d60fa6b-4afc-40be-9480-c043bf254db1.nii.gz</a>
+                    <a>1d2eb6ec-dd72-4926-ab9e-df9f58837b0a.nii.gz</a>
+                    <a>1dae67ab-ef78-4ca7-9537-ae0beeeb3d04.nii.gz</a>
+                    <a>01a7d587-5815-479d-8292-9b4e6ee8f74b.nii.gz</a>
+                    <a>0b2be9e0-886b-4144-99f0-8bb4c6eaa848.nii.gz</a>
+                    <a>0c593893-56d7-4169-8f8e-703d9b205196.nii.gz</a>
+                    <a>0d60fa6b-4afc-40be-9480-c043bf254db1.nii.gz</a>
+                    <a>1d2eb6ec-dd72-4926-ab9e-df9f58837b0a.nii.gz</a>
+                    <a>1dae67ab-ef78-4ca7-9537-ae0beeeb3d04.nii.gz</a>
+                </div>
+            </div>
+            <div class="dropdown" id="forview" style="display:none">
+                <p id="forviewtxt"></p>
+            </div>
+            <div id="formodify" style="display:none">
+                <input type="text" id="colorinput" />
+                <input type="color" id="colorstraw" />
+                <div id="nowcolor"></div>
+                <img src="src/circle.png" width="33vw" height="35vw" id="flood" />
+                <img src="src/eraser.png" width="30vw" height="30vw" id="eraser" />
+                <img src="src/undo.png" width="30vw" height="30vw" id="undo" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <p>&nbsp;&nbsp;&nbsp;需要改变的标签颜色序号：</p><input type="text" id="changelabelcolor" />
+                <p style="font-size: 1.4vw;">&nbsp;&nbsp;&nbsp;R:&emsp;&emsp;&nbsp;G:&emsp;&emsp;&nbsp;B:</p>
+                <input type="text" id="R" />
+                <input type="text" id="G" />
+                <input type="text" id="B" />
+                <button id="changelabelbutton">提交</button>
+                <div id="colortable" ></div>
+                <div class="colorboard"></div>
+            </div>
+            <div id="formeasurecount" style="display:none">
+                <button id="lengthmeasure">长度</button>
+                <br />
+                <p>类别:</p>
+                <input type="text" id="countinput" />
+                <img src="src/trangle.png" width="30vw" height="30vw" id="trangle">
+                <button id="getcount">计数</button>
+                <p>数目:</p>
+                <input type="text" id="countouput" />
+                <div id="countboard"></div>
+            </div>
+            <div id="formodel" style="display:none">
+                <p style="font-size: 9vw;text-shadow: 1vw 1vw violet;">敬请期待</p>
+                <a style="display: none;">formodel</a>
+                <button id="lzxlikeit" style="display: none;">1</button>
+            </div>
+        </div>
+    </div>
+    <div class="rem">
+        <img src="src/rem.jpg" height="22px" width="22px" />
+    </div>
+    <div class="rem2">
+        <img src="src/rem.jpg" height="22px" width="22px" />
+    </div>
+    <div ondragstart="return false">
+        <img class="arrayleft" id="left" src="src/arrow.png" height="30px" width="80px" />
+        <img class="arrayright" id="right" src="src/arrow.png" height="30px" width="80px" />
+        <img class="arraytop" id="superior" src="src/arrow.png" height="30px" width="80px" />
+        <img class="arraybottom" id="inferior" src="src/arrow.png" height="30px" width="80px" />
+        <img class="arrayfront" id="anterior" src="src/arrow.png" height="30px" width="80px" />
+        <img class="arrayrear" id="posterior" src="src/arrow.png" height="30px" width="80px" />
+    </div>
+    <div id="intensity"></div>
+</body>
+
+</html>
+<script src="niivue.umd.js"></script>
+<script src="source.js"></script>
